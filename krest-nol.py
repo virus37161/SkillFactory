@@ -21,19 +21,31 @@ def value ():
          all([u == t == e, u != "-", t != "-", e != "-"])]
     )
     return end1
+p = 0
 while end:
     z = int(input("Ходят крестики"))
+    while z != 11 and z!= 12 and z!= 13 and z!= 21 and z!= 22 and z!= 23 and z!= 31 and z!= 32 and z!= 33:
+        print ("вы ввели неверное значение, попробуйте снова")
+        z = int(input("Укажите корректное значение"))
     q = "x" if z == 11 else q; w = "x" if z == 12 else w; e = "x" if z == 13 else e; r = "x" if z == 21 else r; t = "x" if z == 22 else t; y = "x" if z == 23 else y; u = "x" if z == 31 else u; i = "x" if z == 32 else i; o = "x" if z == 33 else o
     field()
     end = value()
+    p +=1
     if not end:
         print("победу одержали крестики")
         break
+    if p == 9:
+        print("ничья")
+        break
     z = int(input("Ходят нолики"))
+    while z != 11 and z!= 12 and z!= 13 and z!= 21 and z!= 22 and z!= 23 and z!= 31 and z!= 32 and z!= 33:
+        print ("вы ввели неверное значение, попробуйте снова")
+        z = int(input("Укажите корректное значение"))
     q = "0" if z == 11 else q; w = "0" if z == 12 else w; e = "0" if z == 13 else e; r = "0" if z == 21 else r; t = "0" if z == 22 else t; y = "0" if z == 23 else y; u = "0" if z == 31 else u; i = "0" if z == 32 else i; o = "0" if z == 33 else o
     field()
     end = value()
     if not end:
         print("победу одержали нолики")
+    p += 1
 
 
